@@ -606,6 +606,13 @@ function farm_update_7027(&$sandbox) {
 }
 
 /**
+ * Enable new Farm Calendar module.
+ */
+function farm_update_7028(&$sandbox) {
+  _farm_update_enable_modules(array('farm_calendar'));
+}
+
+/**
  * Update helper function: enable modules.
  */
 function _farm_update_enable_modules($modules = array()) {
