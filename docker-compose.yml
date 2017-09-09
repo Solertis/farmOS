@@ -1,16 +1,14 @@
 version: '2'
 services:
   db:
-    image: mariadb:latest
+    image: mdillon/postgis:latest
     volumes:
-      - './.data/db:/var/lib/mysql'
+      - './.data/db:/var/lib/postgresql/data'
     ports:
-      - '3306:3306'
+      - '5432:5432'
     environment:
-      MYSQL_ROOT_PASSWORD: farmos
-      MYSQL_DATABASE: farmos
-      MYSQL_USER: farmos
-      MYSQL_PASSWORD: farmos
+      POSTGRES_USER: farmos
+      POSTGRES_PASSWORD: farmos
 
   www:
     depends_on:
